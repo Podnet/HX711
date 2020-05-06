@@ -1,7 +1,7 @@
-name: mgos_empty_lib
+name: HX711
 author: Apoorva Singh <apoorvasingh@thepodnet.com>
 type: lib
-description: An empty lib that does nothing
+description: HX711 arduino library port to Mongoose OS
 version: 0.1
 
 
@@ -19,6 +19,5 @@ libs:
 
 tags:
   - c
-  - docs:misc:Empty
 
 manifest_version: 2017-09-29
