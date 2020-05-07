@@ -27,10 +27,10 @@ int mgos_hx711_start(HX711_ADC *hx, unsigned int t);
 int mgos_hx711_start_multiple(HX711_ADC *hx, unsigned int t);
 
 //start and do tare if selected, multiple HX711 simultaniously
-int mgos_hx711_start_multiple(HX711_ADC *hx, unsigned int t, bool dotare);
+// int mgos_hx711_start_multiple(HX711_ADC *hx, unsigned int t, bool dotare);
 
 //zero the scale, wait for tare to finnish (blocking)
-void mgos_hx711_tare(HX711_ADC *hx); 								
+void mgos_hx711_tare(HX711_ADC *hx); 
 
 //zero the scale, initiate the tare operation to run in the background (non-blocking)
 void mgos_hx711_tare_no_delay(HX711_ADC *hx); 						
@@ -45,7 +45,7 @@ void mgos_hx711_set_cal_factor(HX711_ADC *hx, float cal);
 float mgos_hx711_get_cal_factor(HX711_ADC *hx); 						
 
 //returns data from the moving average dataset 
-float mgos_hx711_get_data(HX711_ADC *hx); 							
+float mgos_hx711_get_data(HX711_ADC *hx); 
 
 //for testing and debugging
 int mgos_hx711_get_read_index(HX711_ADC *hx); 						
