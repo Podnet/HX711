@@ -97,7 +97,55 @@ void mgos_hx711_power_up(HX711_ADC *hx) {
   return hx->powerUp();
 } 							
 
+long mgos_hx711_get_tare_offset(HX711_ADC *hx) {
+  if(hx == nullptr) return 0;
+  return hx->getTareOffset();
+}
 
+void mgos_hx711_set_tare_offset(HX711_ADC *hx, long newoffset) {
+  if(hx == nullptr) return;
+  return hx->setTareOffset(newoffset);
+}			
+
+uint8_t mgos_hx711_update(HX711_ADC *hx) {
+  if(hx == nullptr) return 0;
+  return hx->update();
+} 							
+
+void mgos_hx711_set_samples_in_use(HX711_ADC *hx, int samples) {
+  if(hx == nullptr) return;
+  return hx->setSamplesInUse(samples);
+}
+
+int mgos_hx711_get_samples_in_use(HX711_ADC *hx) {
+  if(hx == nullptr) return 0;
+  return hx->getSamplesInUse();
+}
+
+void mgos_hx711_reset_samples_index(HX711_ADC *hx) {
+  if(hx == nullptr) return;
+  return hx->resetSamplesIndex();
+}
+
+bool mgos_hx711_refresh_data_set(HX711_ADC *hx) {
+  if(hx == nullptr) return 0;
+  return hx->refreshDataSet();
+}
+
+bool mgos_hx711_get_data_set_status(HX711_ADC *hx) {
+  if(hx == nullptr) return 0;
+  return hx->getDataSetStatus();
+}				
+
+float mgos_hx711_get_new_calibration(HX711_ADC *hx, float known_mass) {
+  if(hx == nullptr) return 0;
+  return hx->getNewCalibration(known_mass);
+}
+
+bool mgos_hx711_get_signal_timeout_flag(HX711_ADC *hx) {
+  if(hx == nullptr) return 0;
+  return hx->getSignalTimeoutFlag();
+}
 
 // bool mgos_empty_init(void) {
 //   return true;
