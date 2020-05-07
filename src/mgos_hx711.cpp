@@ -147,6 +147,4 @@ bool mgos_hx711_get_signal_timeout_flag(HX711_ADC *hx) {
   return hx->getSignalTimeoutFlag();
 }
 
-// bool mgos_empty_init(void) {
-//   return true;
-// }
+
