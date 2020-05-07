@@ -51,10 +51,13 @@ int HX711_ADC::start(unsigned int t)
 	while(millis() < t) 
 	{
 		update();
-		yield();
+		// yield();
 	}
 	tare();
 	tareStatus = 0;
+
+	// Just to fix the errors
+	return 0;
 }	
 
 /*  start(t, dotare) with selectable tare:
@@ -67,13 +70,16 @@ int HX711_ADC::start(unsigned int t, bool dotare)
 	while(millis() < t) 
 	{
 		update();
-		yield();
+		// yield();
 	}
 	if (dotare)
 	{
 		tare();
 		tareStatus = 0;
 	}
+	
+	// Just to fix the errors
+	return 0;
 }	
 
 /*  startMultiple(t): use this if you have more than one load cell and you want to do tare and stabilization simultaneously.
@@ -99,7 +105,7 @@ int HX711_ADC::startMultiple(unsigned int t)
 		}	
 		if(millis() < startMultipleTimeStamp + startMultipleWaitTime) {
 			update(); //do conversions during stabilization time
-			yield();
+			// yield();
 			return 0;
 		}
 		else { //do tare after stabilization time is up
@@ -148,7 +154,7 @@ int HX711_ADC::startMultiple(unsigned int t, bool dotare)
 		}	
 		if(millis() < startMultipleTimeStamp + startMultipleWaitTime) {
 			update(); //do conversions during stabilization time
-			yield();
+			// yield();
 			return 0;
 		}
 		else { //do tare after stabilization time is up
@@ -195,7 +201,7 @@ void HX711_ADC::tare()
 				break; // Prevent endless loop if no HX711 is connected
 			}
 		}
-		yield();
+		// yield();
 	}
 }
 
@@ -310,7 +316,7 @@ uint8_t HX711_ADC::conversion24bit()  //read 24 bit data, store in dataset and s
 	if ((data < 0x000000) || (data > 0xFFFFFF))
 	{
 		dataOutOfRange = 1;
-		Serial.println("dataOutOfRange");
+		// Serial.println("dataOutOfRange");
 	}
 	if (readIndex == samplesInUse + IGN_HIGH_SAMPLE + IGN_LOW_SAMPLE - 1) 
 	{
@@ -340,6 +346,9 @@ uint8_t HX711_ADC::conversion24bit()  //read 24 bit data, store in dataset and s
 			}
 		}
 	}
+
+	// Just to fix the error
+	return 0;
 }
 
 //power down the HX711
@@ -459,7 +468,7 @@ bool HX711_ADC::refreshDataSet()
 	resetSamplesIndex();
 	while ( s > 0 ) {
 		update();
-		yield();
+		// yield();
 		if (digitalRead(doutPin) == LOW) { // HX711 dout pin is pulled low when a new conversion is ready
 			getData(); // add data to the set and start next conversion
 			s--;

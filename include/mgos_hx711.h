@@ -15,13 +15,13 @@ void mgos_hx711_set_gain(HX711_ADC *hx, uint8_t gain = 128);
 void mgos_hx711_begin(HX711_ADC *hx);
 
 //set pinMode, HX711 selected gain and power up the HX711
-void mgos_hx711_begin(HX711_ADC *hx, uint8_t gain);
+// void mgos_hx711_begin(HX711_ADC *hx, uint8_t gain);
 
 //start HX711 and do tare 
 int mgos_hx711_start(HX711_ADC *hx, unsigned int t); 					
 
 //start HX711, do tare if selected
-int mgos_hx711_start(HX711_ADC *hx, unsigned int t, bool dotare);		
+// int mgos_hx711_start(HX711_ADC *hx, unsigned int t, bool dotare);		
 
 //start and do tare, multiple HX711 simultaniously
 int mgos_hx711_start_multiple(HX711_ADC *hx, unsigned int t);
