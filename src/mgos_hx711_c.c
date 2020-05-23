@@ -3,6 +3,6 @@
 //
 #include <stdbool.h>
 
-bool mgos_hx711_init(void) {
+bool mgos_HX711_init(void) {
     return true;
 }
