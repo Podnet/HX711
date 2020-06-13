@@ -9,7 +9,7 @@ extern "C"
 HX711_ADC *mgos_hx711_create(uint8_t dout, uint8_t sck);
 
 //value must be 32, 64 or 128*
-void mgos_hx711_set_gain(HX711_ADC *hx, uint8_t gain = 128); 
+void mgos_hx711_set_gain(HX711_ADC *hx, uint8_t gain); 
 
 //set pinMode, HX711 gain and power up the HX711
 void mgos_hx711_begin(HX711_ADC *hx);
