@@ -103,7 +103,7 @@ int HX711_ADC::startMultiple(unsigned int t)
 			}
 			isFirst = 0;
 		}	
-		if(millis() < startMultipleTimeStamp + startMultipleWaitTime) {
+		if(millis() < (unsigned)startMultipleTimeStamp + (unsigned)startMultipleWaitTime) {
 			update(); //do conversions during stabilization time
 			// yield();
 			return 0;
@@ -152,7 +152,7 @@ int HX711_ADC::startMultiple(unsigned int t, bool dotare)
 			}
 			isFirst = 0;
 		}	
-		if(millis() < startMultipleTimeStamp + startMultipleWaitTime) {
+		if(millis() < (unsigned)startMultipleTimeStamp + (unsigned)startMultipleWaitTime) {
 			update(); //do conversions during stabilization time
 			// yield();
 			return 0;
@@ -313,7 +313,7 @@ uint8_t HX711_ADC::conversion24bit()  //read 24 bit data, store in dataset and s
 	if(SCK_DISABLE_INTERRUPTS) interrupts(); 
 	//convert range from 0x800000 > 0x7FFFFF to 0x000000 > 0xFFFFFF:
 	data = data ^ 0x800000; // if the 24th bit is '1', change 24th bit to 0 
-	if ((data < 0x000000) || (data > 0xFFFFFF))
+	if (false || (data > 0xFFFFFF))
 	{
 		dataOutOfRange = 1;
 		// Serial.println("dataOutOfRange");
